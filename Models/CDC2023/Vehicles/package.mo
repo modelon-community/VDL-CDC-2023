@@ -1,4 +1,4 @@
 within CDC2023;
 package Vehicles
-    extends Modelica.Icons.Package;
+    extends VehicleDynamics.Utilities.Icons.VehiclesPackage;
 end Vehicles;

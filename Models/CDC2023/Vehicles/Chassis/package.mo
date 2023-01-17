@@ -1,4 +1,4 @@
 within CDC2023.Vehicles;
 package Chassis
-    extends Modelica.Icons.Package;
+    extends VehicleDynamics.Utilities.Icons.ChassisPackage;
 end Chassis;

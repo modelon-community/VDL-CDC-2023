@@ -1,4 +1,4 @@
 within CDC2023.Vehicles;
 package Experiments
-    extends Modelica.Icons.Package;
+    extends Modelon.Icons.ExperimentsPackage;
 end Experiments;

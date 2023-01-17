@@ -1,4 +1,4 @@
 within CDC2023.Vehicles.Chassis.Suspensions;
 package Rear
-    extends Modelica.Icons.Package;
+    extends Modelon.Icons.GroupingPackage;
 end Rear;

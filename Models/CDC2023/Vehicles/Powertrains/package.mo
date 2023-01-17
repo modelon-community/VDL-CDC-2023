@@ -1,4 +1,4 @@
 within CDC2023.Vehicles;
 package Powertrains
-    extends Modelica.Icons.Package;
+    extends VehicleDynamics.Utilities.Icons.PowertrainsPackage;
 end Powertrains;

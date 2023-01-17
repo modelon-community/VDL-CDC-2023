@@ -1,4 +1,4 @@
 within CDC2023.Vehicles.Chassis.Suspensions;
 package Front
-    extends Modelica.Icons.Package;
+    extends Modelon.Icons.GroupingPackage;
 end Front;
