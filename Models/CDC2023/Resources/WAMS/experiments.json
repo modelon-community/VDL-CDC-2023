@@ -1,0 +1,54 @@
+{
+  "CDC2023.Vehicles.Chassis.Experiments.QuasiStatic" : [ {
+    "created" : "2023-01-17T09:45:19.897Z",
+    "lastModified" : "2023-01-17T09:45:19.897Z",
+    "name" : "Acceleration ramp",
+    "expressions" : [ ],
+    "model" : "CDC2023.Vehicles.Chassis.Experiments.QuasiStatic",
+    "settings" : {
+      "dynamic" : { },
+      "steadyState" : { },
+      "custom" : {
+        "selectedCustomFunction" : "Chassis Acceleration ramp",
+        "parameters" : [ ]
+      },
+      "simulationType" : "dynamic"
+    },
+    "filters" : [ ],
+    "isDefault" : true
+  }, {
+    "created" : "2023-01-17T09:56:18.134Z",
+    "lastModified" : "2023-01-17T09:56:18.134Z",
+    "name" : "Ramp steer",
+    "expressions" : [ ],
+    "model" : "CDC2023.Vehicles.Chassis.Experiments.QuasiStatic",
+    "settings" : {
+      "dynamic" : { },
+      "steadyState" : { },
+      "custom" : {
+        "selectedCustomFunction" : "Chassis Ramp Steer",
+        "parameters" : [ ]
+      },
+      "simulationType" : "custom"
+    },
+    "filters" : [ ],
+    "isDefault" : false
+  } ],
+  "CDC2023.Vehicles.Powertrains.MinimalFourWheels" : [ {
+    "created" : "2023-01-17T10:38:36.065Z",
+    "lastModified" : "2023-01-17T10:38:36.065Z",
+    "name" : "Experiment 1",
+    "expressions" : [ ],
+    "model" : "CDC2023.Vehicles.Powertrains.MinimalFourWheels",
+    "settings" : {
+      "dynamic" : {
+        "stopTime" : 10.0
+      },
+      "steadyState" : { },
+      "custom" : { },
+      "simulationType" : "dynamic"
+    },
+    "filters" : [ ],
+    "isDefault" : true
+  } ]
+}
