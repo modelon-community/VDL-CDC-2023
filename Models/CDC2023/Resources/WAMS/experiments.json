@@ -87,5 +87,85 @@
     },
     "filters" : [ ],
     "isDefault" : true
+  } ],
+  "CDC2023.Vehicles.Chassis.Suspensions.Front.Experiments.TestSuspension" : [ {
+    "created" : "2023-01-20T09:21:23.562Z",
+    "lastModified" : "2023-01-20T09:21:23.562Z",
+    "name" : "Longitudinal Parallel Force",
+    "expressions" : [ ],
+    "model" : "CDC2023.Vehicles.Chassis.Suspensions.Front.Experiments.TestSuspension",
+    "settings" : {
+      "dynamic" : { },
+      "steadyState" : { },
+      "custom" : {
+        "selectedCustomFunction" : "Suspension Compliance Analysis",
+        "parameters" : [ {
+          "name" : "direction",
+          "value" : "f_x"
+        } ]
+      },
+      "simulationType" : "custom"
+    },
+    "filters" : [ ],
+    "isDefault" : true
+  }, {
+    "created" : "2023-01-20T12:44:21.846Z",
+    "lastModified" : "2023-01-20T12:44:21.846Z",
+    "name" : "Parallel Wheel Travel",
+    "expressions" : [ ],
+    "model" : "CDC2023.Vehicles.Chassis.Suspensions.Front.Experiments.TestSuspension",
+    "settings" : {
+      "dynamic" : { },
+      "steadyState" : { },
+      "custom" : {
+        "selectedCustomFunction" : "Suspension Kinematic Analysis",
+        "parameters" : [ {
+          "name" : "z_2_max",
+          "value" : 0.05
+        }, {
+          "name" : "z_1_max",
+          "value" : 0.05
+        }, {
+          "name" : "z_1_min",
+          "value" : -0.05
+        }, {
+          "name" : "z_2_min",
+          "value" : -0.05
+        } ]
+      },
+      "simulationType" : "custom"
+    },
+    "filters" : [ ],
+    "isDefault" : false
+  } ],
+  "CDC2023.Vehicles.Chassis.Suspensions.Rear.Experiments.TestSuspension" : [ {
+    "created" : "2023-01-20T13:10:41.370Z",
+    "lastModified" : "2023-01-20T13:10:41.370Z",
+    "name" : "Parallel Wheel Travel",
+    "expressions" : [ ],
+    "model" : "CDC2023.Vehicles.Chassis.Suspensions.Rear.Experiments.TestSuspension",
+    "settings" : {
+      "dynamic" : { },
+      "steadyState" : { },
+      "custom" : {
+        "selectedCustomFunction" : "Suspension Kinematic Analysis",
+        "parameters" : [ {
+          "name" : "z_1_max",
+          "value" : 0.05
+        }, {
+          "name" : "z_2_max",
+          "value" : 0.05
+        }, {
+          "name" : "z_1_min",
+          "value" : -0.05
+        }, {
+          "name" : "z_2_min",
+          "value" : -0.05
+        } ]
+      },
+      "simulationType" : "custom"
+    },
+    "filters" : [ ],
+    "isDefault" : true
   } ]
 }

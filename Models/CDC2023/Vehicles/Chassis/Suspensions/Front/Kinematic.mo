@@ -7,7 +7,7 @@ model Kinematic "Kinematic DoubleWishbone"
     leftLinkage(
       r0H={0,0.75,0},
       r0CL1={0,0.37,-0.1},
-      r0CL2={-0.31,0.37,-0.1},
+      r0CL2={-0.31,0.37,-0.0},
       r0CL3={0.105,0.42,0.35},
       r0CL4={-0.105,0.42,0.34},
       r0CS={0.025,0.55,0.45},
@@ -57,8 +57,8 @@ model Kinematic "Kinematic DoubleWishbone"
             4.36e-07,7.982e-07,0,1.125e-06,-4.643e-07,6.552e-06])),
       lowerInnerJoints(visualize_forces_J1 = visualize_joint_forces,visualize_forces_J2 = visualize_joint_forces)),
     steering(
-      r0R_1={-0.191,0.395,-0.033},
-      r0R_2={-0.191,-0.395,-0.033},
+      r0R_1={-0.191,0.395,-0.05},
+      r0R_2=steering.r0R_1 .* {1,-1,1},
       iPR=-0.007,
       r0Q={-0.83,0.43,0.67}),
     stabilizer(
