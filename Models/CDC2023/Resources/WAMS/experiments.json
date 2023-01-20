@@ -10,9 +10,12 @@
       "steadyState" : { },
       "custom" : {
         "selectedCustomFunction" : "Chassis Acceleration ramp",
-        "parameters" : [ ]
+        "parameters" : [ {
+          "name" : "ax_min",
+          "value" : -5
+        } ]
       },
-      "simulationType" : "dynamic"
+      "simulationType" : "custom"
     },
     "filters" : [ ],
     "isDefault" : true
