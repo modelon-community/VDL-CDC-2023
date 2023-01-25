@@ -26,7 +26,7 @@ model InWheelDrive
           I_dc_max_mot=1e6,
           P_max_mot=35000,
           tau_max_mot=75)),
-      redeclare .CDC2023.Vehicles.Powertrains.LimitedTorque controller(
+      redeclare .Electrification.Machines.Control.LimitedTorque controller(
         external_limits=true,
         listen=true,
         id_listen=batteryPack.id,
@@ -51,7 +51,7 @@ model InWheelDrive
           P_max_mot=35000,
           tau_max_mot=75)),
         thermal(fixed_temperature=true),
-      redeclare .CDC2023.Vehicles.Powertrains.LimitedTorque controller(
+      redeclare .Electrification.Machines.Control.LimitedTorque controller(
         external_limits=true,
         listen=true,
         id_listen=batteryPack.id,
@@ -76,7 +76,7 @@ model InWheelDrive
           P_max_mot=35000,
           tau_max_mot=75)),
         thermal(fixed_temperature=true),
-      redeclare .CDC2023.Vehicles.Powertrains.LimitedTorque controller(
+      redeclare .Electrification.Machines.Control.LimitedTorque controller(
         external_limits=true,
         listen=true,
         id_listen=batteryPack.id,
@@ -101,7 +101,7 @@ model InWheelDrive
           P_max_mot=35000,
           tau_max_mot=75)),
         thermal(fixed_temperature=true),
-      redeclare .CDC2023.Vehicles.Powertrains.LimitedTorque controller(
+      redeclare .Electrification.Machines.Control.LimitedTorque controller(
         external_limits=true,
         listen=true,
         id_listen=batteryPack.id,

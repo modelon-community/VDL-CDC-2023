@@ -1,6 +1,5 @@
 within CDC2023.Vehicles.Interfaces;
-
-connector VehicleOutputs "Contact patch locations"
+connector VehicleOutputs "Vehicle Outputs"
     .Modelica.Blocks.Interfaces.RealOutput phi_p(final quantity="Angle", final unit="rad")
     "Body roll angle";
     .Modelica.Blocks.Interfaces.RealOutput phi_q(final quantity="Angle", final unit="rad")
