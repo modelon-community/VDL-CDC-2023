@@ -26,7 +26,7 @@ model InWheelDrive
           I_dc_max_mot=1e6,
           P_max_mot=35000,
           tau_max_mot=75)),
-      redeclare .Electrification.Machines.Control.LimitedTorque controller(
+      redeclare .CDC2023.Vehicles.Powertrains.LimitedTorque controller(
         external_limits=true,
         listen=true,
         id_listen=batteryPack.id,
@@ -51,7 +51,7 @@ model InWheelDrive
           P_max_mot=35000,
           tau_max_mot=75)),
         thermal(fixed_temperature=true),
-      redeclare .Electrification.Machines.Control.LimitedTorque controller(
+      redeclare .CDC2023.Vehicles.Powertrains.LimitedTorque controller(
         external_limits=true,
         listen=true,
         id_listen=batteryPack.id,
@@ -76,7 +76,7 @@ model InWheelDrive
           P_max_mot=35000,
           tau_max_mot=75)),
         thermal(fixed_temperature=true),
-      redeclare .Electrification.Machines.Control.LimitedTorque controller(
+      redeclare .CDC2023.Vehicles.Powertrains.LimitedTorque controller(
         external_limits=true,
         listen=true,
         id_listen=batteryPack.id,
@@ -101,7 +101,7 @@ model InWheelDrive
           P_max_mot=35000,
           tau_max_mot=75)),
         thermal(fixed_temperature=true),
-      redeclare .Electrification.Machines.Control.LimitedTorque controller(
+      redeclare .CDC2023.Vehicles.Powertrains.LimitedTorque controller(
         external_limits=true,
         listen=true,
         id_listen=batteryPack.id,
@@ -127,4 +127,7 @@ model InWheelDrive
     "Powertrain torque on left rear";
   .Modelica.Units.SI.Torque summary_tau_4=-hub_4.flange.tau
     "Powertrain torque on right rear";
+            .Electrification.Control.Interfaces.SystemBus controlBus annotation(Placement(transformation(extent = {{-26.411266944791766,43.58873305520823},{-13.588733055208234,56.41126694479177}},origin = {0.0,0.0},rotation = 0.0)));
+        equation
+    connect(controller.controlBus,controlBus) annotation(Line(points = {{22,30},{-20,30},{-20,50}},color = {240,170,40},pattern = LinePattern.Dot));
 end InWheelDrive;
