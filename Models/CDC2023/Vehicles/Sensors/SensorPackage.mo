@@ -2,23 +2,30 @@ within CDC2023.Vehicles.Sensors;
 model SensorPackage
     extends Modelon.Icons.MultipleSensors;
     .Modelica.Mechanics.MultiBody.Interfaces.Frame_a frame_a annotation(Placement(transformation(extent = {{-116,-16},{-84,16}},origin = {0,0},rotation = 0)));
-    .VehicleDynamics.Vehicles.Chassis.Sensors.ChassisStates chassisStates annotation(Placement(transformation(extent = {{-20,30},{0,50}},origin = {0,0},rotation = 0)));
-    .CDC2023.Vehicles.Interfaces.VehicleOutputs vehicleOutputs annotation(Placement(transformation(extent = {{90.0,-10.0},{110.0,10.0}},origin = {0.0,0.0},rotation = 0.0)));
-    .Electrification.Control.Interfaces.SystemBus controlBus annotation(Placement(transformation(extent = {{-120,-80},{-80,-40}},origin = {0,0},rotation = 0)));
-    .Electrification.Machines.Control.Signals.tau_sns[4] tau_sns(id = {1,2,3,4}) annotation(Placement(transformation(extent = {{-46.0,-15.5},{-54.0,-7.5}},origin = {0.0,0.0},rotation = 0.0)));
-    .Electrification.Machines.Control.Signals.pwr_sns[4] pwr_sns(id = {1,2,3,4}) annotation(Placement(transformation(extent = {{-46.0,-29.5},{-54.0,-21.5}},origin = {0.0,0.0},rotation = 0.0)));
-    .CDC2023.Vehicles.Powertrains.i_sns[4] i_sns annotation(Placement(transformation(extent = {{-46.0,-47.5},{-54.0,-39.5}},origin = {0.0,0.0},rotation = 0.0)));
-    .CDC2023.Vehicles.Interfaces.WheelOutputs[4] wheelOutputs annotation(Placement(transformation(extent = {{-4.0,-33.5},{16.0,-13.5}},origin = {0.0,0.0},rotation = 0.0)));
-    .VehicleDynamics.Vehicles.Interfaces.SignalBus signalBus annotation(Placement(transformation(extent = {{-119.76757610476429,40.23242389523571},{-80.23242389523571,79.76757610476429}},origin = {0.0,0.0},rotation = 0.0)));
+    
     .Modelon.Mechanics.Rotational3D.Interfaces.Flange_a hub_1 "To be connected to the wheel hub flange" annotation(Placement(transformation(extent = {{-80.0,-110.0},{-60.0,-90.0}},rotation = 0.0,origin = {0.0,0.0})));
     .Modelon.Mechanics.Rotational3D.Interfaces.Flange_a hub_2 "To be connected to the wheel hub flange" annotation(Placement(transformation(extent = {{-40.0,-110.0},{-20.0,-90.0}},rotation = 0.0,origin = {0.0,0.0})));
     .Modelon.Mechanics.Rotational3D.Interfaces.Flange_a hub_3 "To be connected to the wheel hub flange" annotation(Placement(transformation(extent = {{20.0,-110.0},{40.0,-90.0}},rotation = 0.0,origin = {0.0,0.0})));
     .Modelon.Mechanics.Rotational3D.Interfaces.Flange_a hub_4 "To be connected to the wheel hub flange" annotation(Placement(transformation(extent = {{60.0,-110.0},{80.0,-90.0}},rotation = 0.0,origin = {0.0,0.0})));
+    
     .VehicleDynamics.Vehicles.Chassis.Sensors.HubAngles hubAngles_1 annotation(Placement(transformation(extent = {{-70.0,-80.0},{-50.0,-60.0}},origin = {0.0,0.0},rotation = 0.0)));
     .VehicleDynamics.Vehicles.Chassis.Sensors.HubAngles hubAngles_2 annotation(Placement(transformation(extent = {{-20.0,-80.0},{0.0,-60.0}},origin = {0.0,0.0},rotation = 0.0)));
     .VehicleDynamics.Vehicles.Chassis.Sensors.HubAngles hubAngles_3 annotation(Placement(transformation(extent = {{30.0,-80.0},{50.0,-60.0}},origin = {0.0,0.0},rotation = 0.0)));
     .VehicleDynamics.Vehicles.Chassis.Sensors.HubAngles hubAngles_4 annotation(Placement(transformation(extent = {{70.0,-80.0},{90.0,-60.0}},origin = {0.0,0.0},rotation = 0.0)));
+    
+    .VehicleDynamics.Vehicles.Interfaces.SignalBus signalBus annotation(Placement(transformation(extent = {{-119.76757610476429,40.23242389523571},{-80.23242389523571,79.76757610476429}},origin = {0.0,0.0},rotation = 0.0)));
+    .CDC2023.Vehicles.Interfaces.VehicleOutputs vehicleOutputs annotation(Placement(transformation(extent = {{90.0,-10.0},{110.0,10.0}},origin = {0.0,0.0},rotation = 0.0)));
+    .Electrification.Control.Interfaces.SystemBus controlBus annotation(Placement(transformation(extent = {{-120,-80},{-80,-40}},origin = {0,0},rotation = 0)));
+    
     .Modelica.Blocks.Sources.Constant const(k = 400) annotation(Placement(transformation(extent = {{-30.0,0.0},{-10.0,20.0}},origin = {0.0,0.0},rotation = 0.0)));
+    
+    .Electrification.Machines.Control.Signals.tau_sns[4] tau_sns(id = {1,2,3,4}) annotation(Placement(transformation(extent = {{-46.0,-15.5},{-54.0,-7.5}},origin = {0.0,0.0},rotation = 0.0)));
+    .Electrification.Machines.Control.Signals.pwr_sns[4] pwr_sns(id = {1,2,3,4}) annotation(Placement(transformation(extent = {{-46.0,-29.5},{-54.0,-21.5}},origin = {0.0,0.0},rotation = 0.0)));
+    .CDC2023.Vehicles.Powertrains.i_sns[4] i_sns annotation(Placement(transformation(extent = {{-46.0,-47.5},{-54.0,-39.5}},origin = {0.0,0.0},rotation = 0.0)));
+    
+    .VehicleDynamics.Vehicles.Chassis.Sensors.ChassisStates chassisStates annotation(Placement(transformation(extent = {{-20,30},{0,50}},origin = {0,0},rotation = 0)));
+protected
+    .CDC2023.Vehicles.Interfaces.WheelOutputs[4] wheelOutputs annotation(Placement(transformation(extent = {{-4.0,-33.5},{16.0,-13.5}},origin = {0.0,0.0},rotation = 0.0)));
 equation
     connect(chassisStates.mount_frame,frame_a) annotation(Line(points = {{-20,40},{-60,40},{-60,0},{-100,0}},color = {95,95,95}));
     connect(chassisStates.velocity[3],vehicleOutputs.v_z) annotation(Line(points = {{1,44},{76,44},{76,0},{100,0}},color = {0,0,127}));

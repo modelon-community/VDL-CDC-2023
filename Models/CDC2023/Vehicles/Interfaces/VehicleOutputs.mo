@@ -30,4 +30,8 @@ connector VehicleOutputs "Vehicle Outputs"
     WheelOutputs FR_wheel;
     WheelOutputs RL_wheel;
     WheelOutputs RR_wheel;
+    annotation(Icon(
+      coordinateSystem(preserveAspectRatio=true,
+        extent={{-100.0,-100.0},{100.0,100.0}}),
+        graphics={Polygon(lineColor={0,0,127},fillColor={255,255,255},fillPattern=FillPattern.Solid,points={{-100.0,100.0},{100.0,0.0},{-100.0,-100.0}}),Bitmap(fileName="modelica://VehicleDynamics/Resources/Images/Vehicles/Chassis/PackageIcon.png",origin={-24,3.000000000000003},extent={{-86,69},{86,-69}},rotation=180)}));
 end VehicleOutputs;
