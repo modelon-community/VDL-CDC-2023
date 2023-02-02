@@ -2,3 +2,5 @@ InWheelDrive
 MotorControlFromBus
 MinimalFourWheels
 i_sns
+BatteryController
+v_pack
