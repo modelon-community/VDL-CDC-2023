@@ -12,11 +12,11 @@ connector VehicleOutputs "Vehicle Outputs"
     "Body pitch speed";
     .Modelica.Blocks.Interfaces.RealOutput omg_r(final quantity="AngularVelocity", final unit="rad/s")
     "Body yaw speed";
-    .Modelica.Blocks.Interfaces.RealOutput a_z(final quantity="Acceleration", final unit="m/s^2")
+    .Modelica.Blocks.Interfaces.RealOutput a_z(final quantity="Acceleration", final unit="m/s2")
     "Body vertical acceleration";
-    .Modelica.Blocks.Interfaces.RealOutput a_y(final quantity="Acceleration", final unit="m/s^2")
+    .Modelica.Blocks.Interfaces.RealOutput a_y(final quantity="Acceleration", final unit="m/s2")
     "Body lateral acceleration";
-    .Modelica.Blocks.Interfaces.RealOutput a_x(final quantity="Acceleration", final unit="m/s^2")
+    .Modelica.Blocks.Interfaces.RealOutput a_x(final quantity="Acceleration", final unit="m/s2")
     "Body longitudinal acceleration";
     .Modelica.Blocks.Interfaces.RealOutput v_z(final quantity="Velocity", final unit="m/s")
     "Body vertical velocity";
