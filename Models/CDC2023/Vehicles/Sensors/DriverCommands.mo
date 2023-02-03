@@ -8,6 +8,7 @@ model DriverCommands
     .VehicleDynamics.Drivers.Perception.Ideal perception annotation(Placement(transformation(extent = {{-90.0,0.0},{-70.0,20.0}},origin = {0.0,0.0},rotation = 0.0)));
     .VehicleDynamics.Vehicles.Interfaces.SignalBus signalBus annotation(Placement(transformation(extent = {{-10.0,-10.0},{10.0,10.0}},origin = {-100.0,0.0},rotation = -90.0)));
     .Modelica.Mechanics.MultiBody.Interfaces.Frame_a frame_a annotation(Placement(transformation(extent = {{-16.0,-16.0},{16.0,16.0}},origin = {0.0,-100.0},rotation = 90.0)));
+protected
   VehicleDynamics.Drivers.Perception.Interfaces.PerceptsOut perceptsOut
     annotation (Placement(transformation(extent={{60,-56},{80,-36}})));
   VehicleDynamics.Drivers.Planning.Interfaces.PathPointOut pathPointOut[
