@@ -11,11 +11,11 @@ connector DriverOutputs "Vehicle Outputs"
 
     .Modelica.Blocks.Interfaces.RealOutput previewDistance[2](final quantity="Length", final unit="m") "Closed loop driver preview distance";
 
-    .Modelica.Blocks.Interfaces.RealOutput previewTime[2](final quantity="Time", final unit="s") "Closed loop driver preview distance";
+    .Modelica.Blocks.Interfaces.RealOutput previewTime[2](final quantity="Time", final unit="s") "Closed loop driver preview time";
 
     .Modelica.Blocks.Interfaces.RealOutput previewDistance_y(final quantity="Length", final unit="m") "Lateral tracker preview distance";
 
-    .Modelica.Blocks.Interfaces.RealOutput previewTime_y(final quantity="Time", final unit="s") "Lateral tracker preview distance";
+    .Modelica.Blocks.Interfaces.RealOutput previewTime_y(final quantity="Time", final unit="s") "Lateral tracker preview time";
 
     .Modelica.Blocks.Interfaces.RealOutput v_veh_percepts(final quantity="Velocity", final unit="m/s")
     "Closed loop driver percepted vehicle speed";
