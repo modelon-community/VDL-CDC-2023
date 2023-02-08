@@ -9,6 +9,7 @@ model DriverCommands
     .VehicleDynamics.Vehicles.Interfaces.SignalBus signalBus annotation(Placement(transformation(extent = {{-10.0,-10.0},{10.0,10.0}},origin = {-100.0,0.0},rotation = -90.0)));
     .Modelica.Mechanics.MultiBody.Interfaces.Frame_a frame_a annotation(Placement(transformation(extent = {{-16.0,-16.0},{16.0,16.0}},origin = {0.0,-100.0},rotation = 90.0)));
     .Modelica.Blocks.Interfaces.RealInput desired_velocity annotation(Placement(transformation(extent = {{-11.632925860839833,-11.632925860839833},{11.632925860839833,11.632925860839833}},origin = {-40.0,112.0},rotation = -90.0)));
+    .Modelica.Blocks.Math.Gain gain(k = 1 / 500) annotation(Placement(transformation(extent = {{19.2747110706908,-30.7252889293092},{28.7252889293092,-21.2747110706908}},origin = {0.0,0.0},rotation = 0.0)));
 protected
   VehicleDynamics.Drivers.Perception.Interfaces.PerceptsOut perceptsOut
     annotation (Placement(transformation(extent={{60,-56},{80,-36}})));
@@ -18,8 +19,6 @@ protected
 equation
     connect(lateralTracker.str_cmd,driverOutputs.str_cmd) annotation(Line(points={{29,38},
           {54,38},{54,0.05},{110.05,0.05}},                                                                            color = {0,0,127}));
-    connect(longitudinalTracker.brk_cmd,driverOutputs.brk_cmd) annotation(Line(points={{1,-26},
-          {55.5,-26},{55.5,0.05},{110.05,0.05}},                                                                              color = {0,0,127}));
     connect(longitudinalTracker.acc_cmd,driverOutputs.acc_cmd) annotation(Line(points={{1,-34},
           {55.5,-34},{55.5,0.05},{110.05,0.05}},                                                                              color = {0,0,127}));
 
@@ -117,5 +116,7 @@ equation
       color={255,0,0},
       thickness=1));
     connect(planning.pathVelocity,desired_velocity) annotation(Line(points = {{-61,14},{-66,14},{-66,92},{-40,92},{-40,112}},color = {0,0,127}));
+    connect(gain.y,driverOutputs.brk_cmd) annotation(Line(points = {{29.197817822240122,-26},{56,-26},{56,0},{110,0}},color = {0,0,127}));
+    connect(gain.u,longitudinalTracker.brk_cmd) annotation(Line(points = {{18.329653284828957,-26},{1,-26}},color = {0,0,127}));
     annotation(Icon(coordinateSystem(preserveAspectRatio = false,extent = {{-100.0,-100.0},{100.0,100.0}}),graphics={  Rectangle(lineColor={0,0,0},fillColor={230,230,230},fillPattern=FillPattern.Solid,extent={{-100.0,-100.0},{100.0,100.0}}),Text(lineColor={0,0,255},extent={{-150,150},{150,110}},textString="%name")}));
 end DriverCommands;
