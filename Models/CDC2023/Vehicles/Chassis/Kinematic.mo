@@ -6,10 +6,10 @@ model Kinematic
     final icon_name="modelica://VehicleDynamics/Resources/Images/Vehicles/Chassis/SedanLKIcon.png",
     h_start=0.312,redeclare replaceable .CDC2023.Vehicles.Chassis.Suspensions.Front.Kinematic frontSuspension,redeclare replaceable .CDC2023.Vehicles.Chassis.Suspensions.Rear.Kinematic rearSuspension,
     redeclare .VehicleDynamics.Vehicles.Chassis.Bodies.Examples.Sedan body,
-    redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.Examples.Pacejka02.Conventional_205_55_R17 wheel_1,
-    redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.Examples.Pacejka02.Conventional_205_55_R17 wheel_2,
-    redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.Examples.Pacejka02.Conventional_205_55_R17 wheel_3,
-    redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.Examples.Pacejka02.Conventional_205_55_R17 wheel_4);
+    redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.Examples.Pacejka02.Conventional_205_55_R17 wheel_1(redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.ContactCalculation.Generic contact(filtering = "Geometry weighted",nu = 5,phi_u = 0.78539816339744749917)),
+    redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.Examples.Pacejka02.Conventional_205_55_R17 wheel_2(redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.ContactCalculation.Generic contact(filtering = "Geometry weighted",nu = 5,phi_u = 0.78539816339744749917)),
+    redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.Examples.Pacejka02.Conventional_205_55_R17 wheel_3(redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.ContactCalculation.Generic contact(filtering = "Geometry weighted",nu = 5,phi_u = 0.78539816339744749917)),
+    redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.Examples.Pacejka02.Conventional_205_55_R17 wheel_4(redeclare replaceable .VehicleDynamics.Vehicles.Chassis.Wheels.ContactCalculation.Generic contact(filtering = "Geometry weighted",nu = 5,phi_u = 0.78539816339744749917)));
 
   annotation (
     Icon(coordinateSystem(
