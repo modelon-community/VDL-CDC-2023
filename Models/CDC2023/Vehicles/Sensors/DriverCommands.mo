@@ -2,7 +2,7 @@ within CDC2023.Vehicles.Sensors;
 model DriverCommands
     .VehicleDynamics.Drivers.Tracking.Blocks.SinglePointLateralTracker lateralTracker annotation(Placement(transformation(extent = {{-12.0,28.0},{8.0,48.0}},origin={20,0},     rotation = 0.0)));
     .VehicleDynamics.Drivers.Tracking.Blocks.SinglePointLongitudinalTracker longitudinalTracker annotation(Placement(transformation(extent = {{-20.0,-40.0},{0.0,-20.0}},                   rotation = 0.0)));
-    .VehicleDynamics.Drivers.ClosedLoop.Longitudinal.DesiredVelocity planning(n_info = 3) annotation(Placement(transformation(extent = {{-60.0,0.0},{-40.0,20.0}},origin = {0.0,0.0},rotation = 0.0)));
+    .VehicleDynamics.Drivers.Planning.DesiredVelocity planning(n_info = 3) annotation(Placement(transformation(extent = {{-60.0,0.0},{-40.0,20.0}},origin = {0.0,0.0},rotation = 0.0)));
     .Modelica.Blocks.Sources.Constant const(k = 0) annotation(Placement(transformation(extent = {{-60,-80},{-40,-60}},origin={4,0},  rotation = 0)));
     .CDC2023.Vehicles.Interfaces.DriverOutputs driverOutputs annotation(Placement(transformation(extent = {{100.0,-10.0},{120.0,10.0}},origin = {0.0,0.0},rotation = 0.0)));
     .VehicleDynamics.Drivers.Perception.Ideal perception annotation(Placement(transformation(extent = {{-90.0,0.0},{-70.0,20.0}},origin = {0.0,0.0},rotation = 0.0)));
@@ -45,13 +45,17 @@ equation
 
 
     connect(longitudinalTracker.previewDistance[1],planning.previewDistance[2]) annotation(Line(points={{-14,-19},{-14,21},{-46,21}},                                                                                                                              color = {0,0,127}));
-    connect(longitudinalTracker.previewDistance[2],planning.previewDistance[3]) annotation(Line(points={{-14,-19},{-14,21},{-46,21}},                                                                                                                         color = {0,0,127}));
+    connect(longitudinalTracker.previewDistance[2],planning.previewDistance[3]) annotation(Line(points={{-14,-19},
+          {-14,21.3333},{-46,21.3333}},                                                                                                                                                                                                        color = {0,0,127}));
 
     connect(longitudinalTracker.previewTime[1],planning.previewTime[2]) annotation(Line(points={{-6,-19},{-6,21},{-54,21}},                                                                                                 color = {0,0,127}));
-    connect(longitudinalTracker.previewTime[2],planning.previewTime[3]) annotation(Line(points={{-6,-19},{-6,27},{-54,27},{-54,21}},                                                                                            color = {0,0,127}));
+    connect(longitudinalTracker.previewTime[2],planning.previewTime[3]) annotation(Line(points={{-6,-19},
+          {-6,27},{-54,27},{-54,21.3333}},                                                                                                                                                                                      color = {0,0,127}));
 
-    connect(lateralTracker.previewDistance[1],planning.previewDistance[1]) annotation(Line(points={{14,49},{14,54},{-46,54},{-46,21}},                                                                                      color = {0,0,127}));
-    connect(lateralTracker.previewTime[1],planning.previewTime[1]) annotation(Line(points={{22,49},{22,54},{38,54},{38,21},{-54,21}},                                                                 color = {0,0,127}));
+    connect(lateralTracker.previewDistance[1],planning.previewDistance[1]) annotation(Line(points={{14,49},
+          {14,54},{-46,54},{-46,20.6667}},                                                                                                                                                                                  color = {0,0,127}));
+    connect(lateralTracker.previewTime[1],planning.previewTime[1]) annotation(Line(points={{22,49},
+          {22,54},{38,54},{38,20.6667},{-54,20.6667}},                                                                                                                                                color = {0,0,127}));
 
 
     connect(const.y,longitudinalTracker.acc_trk) annotation(Line(points={{-35,-70},
@@ -105,11 +109,11 @@ equation
       thickness=1));
   connect(longitudinalTracker.pathPoint[2], planning.pathPoint[3]) annotation (
       Line(
-      points={{-22,-26},{-28,-26},{-28,10},{-38,10}},
+      points={{-22,-26},{-28,-26},{-28,10.6667},{-38,10.6667}},
       color={255,0,0},
       thickness=1));
   connect(lateralTracker.pathPoint[1], planning.pathPoint[1]) annotation (Line(
-      points={{6,42},{-28,42},{-28,10},{-38,10}},
+      points={{6,42},{-28,42},{-28,9.33333},{-38,9.33333}},
       color={255,0,0},
       thickness=1));
     connect(planning.pathVelocity,desired_velocity) annotation(Line(points = {{-61,14},{-66,14},{-66,92},{-40,92},{-40,112}},color = {0,0,127}));
