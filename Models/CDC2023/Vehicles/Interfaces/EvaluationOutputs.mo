@@ -3,7 +3,7 @@ within CDC2023.Vehicles.Interfaces;
 connector EvaluationOutputs "Vehicle Outputs"
     .Modelica.Blocks.Interfaces.RealOutput J_v_1 "Integral of deviation from target velocity";
     .Modelica.Blocks.Interfaces.RealOutput J_v_2 "Integral of deviation from target path";
-    .Modelica.Blocks.Interfaces.RealOutput J_e(final quantity="Energy", final unit="J") "Energy consumption";
+    .Modelica.Blocks.Interfaces.RealOutput J_e "Energy consumption";
 
     annotation(Icon(
       coordinateSystem(preserveAspectRatio=true,
