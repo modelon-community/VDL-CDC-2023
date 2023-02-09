@@ -4,6 +4,9 @@ model FlatPad "Flat pad with compact chassis"
   extends .VehicleDynamics.Vehicles.Chassis.Experiments.Templates.FlatPad(
     zoom=1.1,redeclare replaceable .CDC2023.Vehicles.Chassis.Kinematic chassis(enable_inertial_states = false),
     redeclare replaceable .VehicleDynamics.Atmospheres.Constant atmosphere,fixedRig(enable_states = true,zPosition(s(start = chassis.h_start))));
+    inner .Modelon.Mechanics.MultiBody.AggregateMass.AggregateMass aggregateMass(enable_aggregate = true,resolve = .Modelon.Mechanics.MultiBody.Internal.AggregateMass.Types.ResolveEnumeration.RESOLVE) annotation(Placement(transformation(extent = {{-100.0,80.0},{-80.0,100.0}},rotation = 0.0,origin = {0.0,0.0})));
+equation
+    connect(aggregateMass.frame_resolve,chassis.vehicleFrame) annotation(Line(points = {{-90,80},{-90,-4},{18,-4},{18,-20}},color = {95,95,95},pattern = LinePattern.Dot));
 annotation (
     __Dymola_Commands(
       executeCall=
