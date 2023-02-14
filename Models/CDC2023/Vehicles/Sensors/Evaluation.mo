@@ -8,7 +8,6 @@ model Evaluation
     .Modelica.Blocks.Routing.Multiplex4 currents annotation(Placement(transformation(extent = {{-80,50},{-60,70}},origin = {0,0},rotation = 0)));
     .Modelica.Blocks.Routing.Replicator voltage(nout = 4) annotation(Placement(transformation(extent = {{-80,20},{-60,40}},origin = {0,0},rotation = 0)));
     .Modelica.Blocks.Math.Sum sum(nin = 4) annotation(Placement(transformation(extent = {{-10.0,30.0},{10.0,50.0}},origin = {0.0,0.0},rotation = 0.0)));
-    .Modelica.Blocks.Math.Product square annotation(Placement(transformation(extent = {{26,30},{46,50}},origin = {0,0},rotation = 0)));
     .Modelica.Blocks.Continuous.Integrator integrator annotation(Placement(transformation(extent = {{60.0,30.0},{80.0,50.0}},origin = {0.0,0.0},rotation = 0.0)));
     .Modelica.Blocks.Continuous.Integrator integrator2 annotation(Placement(transformation(extent = {{30.0,-30.0},{50.0,-10.0}},origin = {0.0,0.0},rotation = 0.0)));
     .Modelica.Blocks.Math.Product square2 annotation(Placement(transformation(extent = {{0.0,-30.0},{20.0,-10.0}},origin = {0.0,0.0},rotation = 0.0)));
@@ -28,9 +27,6 @@ equation
     connect(voltage.y,product.u2) annotation(Line(points = {{-59,30},{-50.5,30},{-50.5,34},{-42,34}},color = {0,0,127}));
     connect(sum.u,product.y) annotation(Line(points = {{-12,40},{-19,40}},color = {0,0,127}));
     connect(integrator.y,evaluationOutputs.J_e) annotation(Line(points = {{81,40},{96,40},{96,0},{110,0}},color = {0,0,127}));
-    connect(sum.y,square.u1) annotation(Line(points = {{11,40},{17.5,40},{17.5,46},{24,46}},color = {0,0,127}));
-    connect(square.u2,sum.y) annotation(Line(points = {{24,34},{17.5,34},{17.5,40},{11,40}},color = {0,0,127}));
-    connect(integrator.u,square.y) annotation(Line(points = {{58,40},{47,40}},color = {0,0,127}));
     connect(square2.u1,velocityError.y) annotation(Line(points = {{-2,-14},{-6.5,-14},{-6.5,-20},{-11,-20}},color = {0,0,127}));
     connect(square2.u2,velocityError.y) annotation(Line(points = {{-2,-26},{-6.5,-26},{-6.5,-20},{-11,-20}},color = {0,0,127}));
     connect(square2.y,integrator2.u) annotation(Line(points = {{21,-20},{28,-20}},color = {0,0,127}));
@@ -40,5 +36,6 @@ equation
     connect(pathInfo.r_P[2],square3.u1) annotation(Line(points = {{-19,-60},{-13.5,-60},{-13.5,-54},{-8,-54}},color = {0,0,127}));
     connect(pathInfo.r_P[2],square3.u2) annotation(Line(points = {{-19,-60},{-13.5,-60},{-13.5,-66},{-8,-66}},color = {0,0,127}));
     connect(square3.y,integrator3.u) annotation(Line(points = {{15,-60},{28,-60}},color = {0,0,127}));
+    connect(sum.y,integrator.u) annotation(Line(points = {{11,40},{58,40}},color = {0,0,127}));
     annotation(Icon(coordinateSystem(preserveAspectRatio = false,extent = {{-100.0,-100.0},{100.0,100.0}}),graphics = {Rectangle(lineColor={0,0,0},fillColor={230,230,230},fillPattern=FillPattern.Solid,extent={{-100.0,-100.0},{100.0,100.0}}),Text(lineColor={0,0,255},extent={{-150,150},{150,110}},textString="%name")}));
 end Evaluation;
