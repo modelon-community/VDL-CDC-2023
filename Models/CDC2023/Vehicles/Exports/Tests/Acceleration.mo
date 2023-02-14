@@ -3,7 +3,7 @@ within CDC2023.Vehicles.Exports.Tests;
 model Acceleration
     extends Modelon.Icons.Experiment;
     .CDC2023.Vehicles.Exports.Acceleration doubleLaneChange(driverCommands(longitudinalTracker(K_acc = 1)),world(enableAnimation = true)) annotation(Placement(transformation(extent = {{-8,-8},{12,12}},origin = {0,0},rotation = 0)));
-    .Modelica.Blocks.Math.Add add(k1 = 75,k2 = -75) annotation(Placement(transformation(extent = {{-86,-16},{-66,4}},origin = {0,0},rotation = 0)));
+    .Modelica.Blocks.Math.Add add(k1 = 100,k2 = -1500) annotation(Placement(transformation(extent = {{-86,-16},{-66,4}},origin = {0,0},rotation = 0)));
 equation
     connect(doubleLaneChange.driverOutputs.str_cmd,doubleLaneChange.phi_str) annotation(Line(points = {{13,6},{64,6},{64,-66},{-54,-66},{-54,9},{-10,9}},color = {0,0,127}));
     connect(add.y,doubleLaneChange.tau_FL) annotation(Line(points = {{-65,-6},{-37.5,-6},{-37.5,5.6000000000000005},{-10,5.6000000000000005}},color = {0,0,127}));
