@@ -1,0 +1,5 @@
+within CDC2023.Vehicles.Exports;
+      
+      model AccelerationMap
+        extends .CDC2023.Vehicles.Exports.Sedan(redeclare replaceable .Modelica.Blocks.Sources.Trapezoid desiredVelocity(startTime = 5, nperiod = 1, rising = 5, falling = 5, width = 5, amplitude = 15, period = 20), vehicle(v_start = 0), redeclare replaceable .Modelica.Blocks.Sources.Trapezoid desiredVelocityPreview(amplitude = desiredVelocity.amplitude, rising = desiredVelocity.rising, width = desiredVelocity.width, falling = desiredVelocity.falling, period = desiredVelocity.period, nperiod = desiredVelocity.nperiod, offset = desiredVelocity.offset, startTime = desiredVelocity.startTime - 1), redeclare replaceable .CDC2023.Grounds.WavyUneven ground(file_name = .Modelica.Utilities.Files.loadResource("modelica://VehicleDynamics/Resources/Data/Roads/Examples_Straight.mat"), ylims = {-3, 3}, xlims = {-5, 175}));
+      end AccelerationMap;
