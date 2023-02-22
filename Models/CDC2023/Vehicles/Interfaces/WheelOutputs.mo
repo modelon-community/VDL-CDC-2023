@@ -15,6 +15,8 @@ connector WheelOutputs "Contact patch locations"
     "Tyre lateral force";
   .Modelica.Blocks.Interfaces.RealOutput f_x(final quantity="Force", final unit="N")
     "Tyre longitudinal force";
+  .Modelica.Blocks.Interfaces.RealOutput omg(final quantity="AngularVelocity", final unit="rad/s");
+  .Modelica.Blocks.Interfaces.RealOutput sr;
     annotation(Icon(
       coordinateSystem(preserveAspectRatio=true,
         extent={{-100.0,-100.0},{100.0,100.0}}),

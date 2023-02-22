@@ -93,5 +93,15 @@ equation
     connect(hubAngles_4.steer,wheelOutputs[4].phi_str) annotation(Line(points = {{49,-74},{38,-74},{38,-24},{70,-24}},color = {0,0,127}));
     connect(v_pack.systemBus,controlBus) annotation(Line(points = {{-12,8},{-74,8},{-74,-60},{-100,-60}},color = {240,170,40},pattern = LinePattern.Dot));
     connect(v_pack.y_r,vehicleOutputs.v_bat) annotation(Line(points = {{-3,8},{20,8},{20,0},{100,0}},color = {0,0,127}));
+    
+    connect(wheelOutputs[1].sr,signalBus.VDL_whl_slp_x[1]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
+    connect(wheelOutputs[2].sr,signalBus.VDL_whl_slp_x[2]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
+    connect(wheelOutputs[3].sr,signalBus.VDL_whl_slp_x[3]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
+    connect(wheelOutputs[4].sr,signalBus.VDL_whl_slp_x[4]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
+    
+    connect(wheelOutputs[1].omg,signalBus.VDL_whl_spd[1]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
+    connect(wheelOutputs[2].omg,signalBus.VDL_whl_spd[2]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
+    connect(wheelOutputs[3].omg,signalBus.VDL_whl_spd[3]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
+    connect(wheelOutputs[4].omg,signalBus.VDL_whl_spd[4]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
     annotation(Icon(coordinateSystem(preserveAspectRatio = false,extent = {{-100.0,-100.0},{100.0,100.0}}),graphics = {Text(lineColor={0,0,255},extent={{-150,150},{150,110}},textString="%name")}));
 end SensorPackage;
