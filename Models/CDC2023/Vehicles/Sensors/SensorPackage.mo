@@ -23,6 +23,7 @@ model SensorPackage
     
     .VehicleDynamics.Vehicles.Chassis.Sensors.ChassisStates chassisStates annotation(Placement(transformation(extent = {{-20,30},{0,50}},origin = {0,0},rotation = 0)));
     .CDC2023.Vehicles.Powertrains.v_pack v_pack annotation(Placement(transformation(extent = {{-4.0,4.0},{-12.0,12.0}},origin = {0.0,0.0},rotation = 0.0)));
+    .CDC2023.Vehicles.Interfaces.DriverOutputs driverOutputs annotation(Placement(transformation(extent = {{-10.0,-10.0},{10.0,10.0}},origin = {0.0,110.0},rotation = -90.0)));
 protected
     .CDC2023.Vehicles.Interfaces.WheelOutputs[4] wheelOutputs annotation(Placement(transformation(extent = {{60.0,-34.0},{80.0,-14.0}},origin = {0.0,0.0},rotation = 0.0)));
 equation
@@ -103,5 +104,9 @@ equation
     connect(wheelOutputs[2].omg,signalBus.VDL_whl_spd[2]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
     connect(wheelOutputs[3].omg,signalBus.VDL_whl_spd[3]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
     connect(wheelOutputs[4].omg,signalBus.VDL_whl_spd[4]) annotation(Line(points = {{70,-24},{50,-24},{50,-38},{-74,-38},{-74,60},{-100,60}},color = {0,0,127}));
+    connect(driverOutputs.rV_x,vehicleOutputs.v_t_x) annotation(Line(points = {{0,110},{0,55},{100,55},{100,0}},color = {0,0,127}));
+    connect(driverOutputs.rV_y,vehicleOutputs.v_t_y) annotation(Line(points = {{0,110},{0,55},{100,55},{100,0}},color = {0,0,127}));
+    connect(driverOutputs.sG_x,vehicleOutputs.s_t_x) annotation(Line(points = {{0,110},{0,55},{100,55},{100,0}},color = {0,0,127}));
+    connect(driverOutputs.sG_y,vehicleOutputs.s_t_y) annotation(Line(points = {{0,110},{0,55},{100,55},{100,0}},color = {0,0,127}));
     annotation(Icon(coordinateSystem(preserveAspectRatio = false,extent = {{-100.0,-100.0},{100.0,100.0}}),graphics = {Text(lineColor={0,0,255},extent={{-150,150},{150,110}},textString="%name")}));
 end SensorPackage;

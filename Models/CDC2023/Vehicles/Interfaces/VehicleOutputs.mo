@@ -26,6 +26,14 @@ connector VehicleOutputs "Vehicle Outputs"
     "Body longitudinal velocity";
     .Modelica.Blocks.Interfaces.RealOutput v_bat(final quantity="Voltage", final unit="V")
     "Battery voltage";
+    .Modelica.Blocks.Interfaces.RealOutput v_t_y(final quantity="Velocity", final unit="m/s")
+    "Target body lateral speed";
+    .Modelica.Blocks.Interfaces.RealOutput v_t_x(final quantity="Velocity", final unit="m/s")
+    "Target body longitudinal speed";
+    .Modelica.Blocks.Interfaces.RealOutput s_t_y(final quantity="Position", final unit="m")
+    "Target body lateral position";
+    .Modelica.Blocks.Interfaces.RealOutput s_t_x(final quantity="Position", final unit="m")
+    "Target body longitudinal position";
     WheelOutputs FL_wheel;
     WheelOutputs FR_wheel;
     WheelOutputs RL_wheel;

@@ -17,18 +17,18 @@ protected
   VehicleDynamics.Drivers.Perception.Interfaces.PerceptsOut perceptsOut
     annotation (Placement(transformation(extent={{60,-56},{80,-36}})));
   VehicleDynamics.Drivers.Planning.Interfaces.PathPointOut pathPointOut[3]
-    annotation (Placement(transformation(extent={{20.0,10.0},{40.0,30.0}},rotation = 0.0,origin = {0.0,0.0})));
+    annotation (Placement(transformation(extent={{14.0,10.0},{34.0,30.0}},rotation = 0.0,origin = {0.0,0.0})));
 equation
     connect(lateralTracker.str_cmd,driverOutputs.str_cmd) annotation(Line(points={{29,38},
           {54,38},{54,0.05},{110.05,0.05}},                                                                            color = {0,0,127}));
     connect(longitudinalTracker.acc_cmd,driverOutputs.acc_cmd) annotation(Line(points={{1,-34},
           {55.5,-34},{55.5,0.05},{110.05,0.05}},                                                                              color = {0,0,127}));
 
-    connect(pathPointOut[2].vV_P_x,driverOutputs.vV_P_x[1]) annotation(Line(points={{30,20},{36,20},{36,0.05},{110.05,0.05}},                                                                      color = {255,0,0}));
-    connect(pathPointOut[3].vV_P_x,driverOutputs.vV_P_x[2]) annotation(Line(points={{30,20},{36,20},{36,0.05},{110.05,0.05}},                                                                      color = {255,0,0}));
+    connect(pathPointOut[2].vV_P_x,driverOutputs.vV_P_x[1]) annotation(Line(points={{24,20},{36,20},{36,0.05},{110.05,0.05}},                                                                      color = {255,0,0}));
+    connect(pathPointOut[3].vV_P_x,driverOutputs.vV_P_x[2]) annotation(Line(points={{24,20},{36,20},{36,0.05},{110.05,0.05}},                                                                      color = {255,0,0}));
 
-    connect(pathPointOut[1].rV_x,driverOutputs.rV_x) annotation(Line(points={{30,20},{36,20},{36,0.05},{110.05,0.05}},                                                               color = {255,0,0}));
-    connect(pathPointOut[1].rV_y,driverOutputs.rV_y) annotation(Line(points={{30,20},{36,20},{36,0.05},{110.05,0.05}},                                                               color = {255,0,0}));
+    connect(pathPointOut[1].rV_x,driverOutputs.rV_x) annotation(Line(points={{24,20},{36,20},{36,0.05},{110.05,0.05}},                                                               color = {255,0,0}));
+    connect(pathPointOut[1].rV_y,driverOutputs.rV_y) annotation(Line(points={{24,20},{36,20},{36,0.05},{110.05,0.05}},                                                               color = {255,0,0}));
 
     connect(lateralTracker.previewDistance[1],driverOutputs.previewDistance_y) annotation(Line(points={{14,49},
           {14,58},{96,58},{96,0.05},{110.05,0.05}},                                                                                              color = {0,0,127}));
@@ -96,8 +96,10 @@ equation
     connect(planning2.percepts,perception.percepts) annotation(Line(points = {{-56,-20},{-64,-20},{-64,10},{-70,10}},color = {0,128,255},pattern = LinePattern.Dash));
     connect(longitudinalTracker.pathPoint[1],planning.pathPoint[1]) annotation(Line(points = {{-22,-26},{-28,-26},{-28,10},{-32,10}},color = {255,0,0}));
     connect(longitudinalTracker.pathPoint[2],planning2.pathPoint[1]) annotation(Line(points = {{-22,-26},{-28,-26},{-28,-20},{-32,-20}},color = {255,0,0}));
-    connect(lateralPlanning.pathPoint[1],pathPointOut[1]) annotation(Line(points = {{-26,68},{2,68},{2,20},{30,20}},color = {255,0,0}));
-    connect(planning.pathPoint[1],pathPointOut[2]) annotation(Line(points = {{-32,10},{0,10},{0,20},{30,20}},color = {255,0,0}));
-    connect(planning2.pathPoint[1],pathPointOut[3]) annotation(Line(points = {{-32,-20},{-28,-20},{-28,10},{0,10},{0,20},{30,20}},color = {255,0,0}));
+    connect(lateralPlanning.pathPoint[1],pathPointOut[1]) annotation(Line(points = {{-26,68},{2,68},{2,20},{24,20}},color = {255,0,0}));
+    connect(planning.pathPoint[1],pathPointOut[2]) annotation(Line(points = {{-32,10},{0,10},{0,20},{24,20}},color = {255,0,0}));
+    connect(planning2.pathPoint[1],pathPointOut[3]) annotation(Line(points = {{-32,-20},{-28,-20},{-28,10},{0,10},{0,20},{24,20}},color = {255,0,0}));
+    connect(pathPointOut[1].sG_x,driverOutputs.sG_x) annotation(Line(points = {{24,20},{36,20},{36,0},{110,0}},color = {255,0,0}));
+    connect(pathPointOut[1].sG_y,driverOutputs.sG_y) annotation(Line(points = {{24,20},{36,20},{36,0},{110,0}},color = {255,0,0}));
     annotation(Icon(coordinateSystem(preserveAspectRatio = false,extent = {{-100.0,-100.0},{100.0,100.0}}),graphics={  Rectangle(lineColor={0,0,0},fillColor={230,230,230},fillPattern=FillPattern.Solid,extent={{-100.0,-100.0},{100.0,100.0}}),Text(lineColor={0,0,255},extent={{-150,150},{150,110}},textString="%name")}));
 end DriverCommands;

@@ -1,5 +1,5 @@
 within CDC2023.Vehicles.Interfaces;
-connector DriverOutputs "Vehicle Outputs"
+connector DriverOutputs "Driver Outputs"
     .Modelica.Blocks.Interfaces.RealOutput str_cmd(final quantity="Angle", final unit="rad") "Closed loop driver steering command";
     .Modelica.Blocks.Interfaces.RealOutput brk_cmd "Closed loop driver brake command";
     .Modelica.Blocks.Interfaces.RealOutput acc_cmd "Closed loop driver accelerator command";
@@ -25,7 +25,10 @@ connector DriverOutputs "Vehicle Outputs"
     "Closed loop driver percepted vehicle speed in y";
     .Modelica.Blocks.Interfaces.RealOutput vV_P_x_percepts(final quantity="Velocity", final unit="m/s")
     "Closed loop driver percepted vehicle speed along path in x";
-
+    .Modelica.Blocks.Interfaces.RealOutput sG_y(final quantity="Position", final unit="m")
+    "Target body lateral position";
+    .Modelica.Blocks.Interfaces.RealOutput sG_x(final quantity="Position", final unit="m")
+    "Target body longitudinal position";
     annotation(Icon(
       coordinateSystem(preserveAspectRatio=true,
         extent={{-100.0,-100.0},{100.0,100.0}}),
