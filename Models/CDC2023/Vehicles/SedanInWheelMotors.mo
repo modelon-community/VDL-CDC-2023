@@ -3,6 +3,7 @@ model SedanInWheelMotors
     extends .VehicleDynamics.Vehicles.Templates.Car(final icon_name = "modelica://VehicleDynamics/Resources/Images/Vehicles/SedanLKIcon.png",redeclare replaceable .CDC2023.Vehicles.Chassis.Kinematic chassis,redeclare replaceable .CDC2023.Vehicles.Powertrains.InWheelDrive powertrain,redeclare replaceable .VehicleDynamics.Vehicles.Brakes.None brakes,redeclare replaceable .VehicleDynamics.Vehicles.Dashboards.Minimal dashboard,h_start = 0.312);
     .CDC2023.Vehicles.Interfaces.VehicleOutputs vehicleOutputs annotation(Placement(transformation(extent = {{200.0,50.0},{220.0,70.0}},origin = {0.0,0.0},rotation = 0.0)));
     .CDC2023.Vehicles.Sensors.SensorPackage sensorPackage annotation(Placement(transformation(extent = {{70.20021645292883,22.20021645292883},{109.79978354707117,61.79978354707117}},origin = {0.0,0.0},rotation = 0.0)));
+    .Electrification.Control.Interfaces.SystemBus controlBus annotation(Placement(transformation(extent = {{26.490898710197868,86.49089871019785},{53.50910128980213,113.50910128980215}},origin = {0.0,0.0},rotation = 0.0)));
 equation
     connect(sensorPackage.vehicleOutputs,vehicleOutputs) annotation(Line(points = {{109.79978354707117,42},{154.8998917735356,42},{154.8998917735356,60},{210,60}},color = {0,0,0}));
     connect(sensorPackage.frame_a,chassis.vehicleFrame) annotation(Line(points = {{70.20021645292883,42},{-15,42},{-15,-20}},color = {95,95,95}));
@@ -12,4 +13,5 @@ equation
     connect(sensorPackage.hub_2,chassis.hub_2) annotation(Line(points = {{84.06006493587864,22.200216452928828},{84.06006493587864,1.100108226464414},{-30,1.100108226464414},{-30,-20}},color = {95,95,95}));
     connect(sensorPackage.hub_3,chassis.hub_3) annotation(Line(points = {{95.93993506412136,22.200216452928828},{95.93993506412136,-76},{30,-76},{30,-70}},color = {95,95,95}));
     connect(sensorPackage.hub_4,chassis.hub_4) annotation(Line(points = {{103.85984848294981,22.200216452928828},{103.85984848294981,1.100108226464414},{30,1.100108226464414},{30,-20}},color = {95,95,95}));
+    connect(powertrain.controlBus,controlBus) annotation(Line(points = {{120,-20},{120,74},{40,74},{40,100}},color = {240,170,40},pattern = LinePattern.Dot));
 end SedanInWheelMotors;

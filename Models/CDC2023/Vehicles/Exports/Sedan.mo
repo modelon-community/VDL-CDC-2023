@@ -18,6 +18,7 @@ model Sedan
     replaceable .Modelica.Blocks.Sources.Constant desiredVelocityPreview(k = vehicle.v_start) constrainedby .Modelica.Blocks.Interfaces.SO annotation(Placement(transformation(extent = {{-20.0,60.0},{0.0,80.0}},origin = {0.0,0.0},rotation = 0.0)));
     .CDC2023.Vehicles.Sensors.Evaluation evaluation annotation(Placement(transformation(extent = {{50.0,-20.0},{70.0,0.0}},origin = {0.0,0.0},rotation = 0.0)));
     .CDC2023.Vehicles.Interfaces.EvaluationOutputs evaluationOutputs annotation(Placement(transformation(extent = {{100,0},{120,20}},origin = {0,0},rotation = 0)));
+    .CDC2023.Vehicles.Sensors.SensorPackage sensorPackage annotation(Placement(transformation(extent = {{60,-58},{80,-38}},origin = {0,0},rotation = 0)));
 equation
     connect(vehicle.signalBus,signalBus) annotation(Line(points = {{-60,-70},{-80,-70},{-80,-20}},color = {255,204,51}));
     connect(release.y,steerRobot.release) annotation(Line(points = {{-59,90},{-50,90},{-50,31}},color = {255,0,255}));
@@ -33,11 +34,18 @@ equation
     connect(tau_RR,signalBus.VDL_trm_mtr_trq_cmd[4]) annotation(Line(points = {{-120,-70},{-80,-70},{-80,-20}},color = {0,0,127}));
     connect(driverCommands.signalBus,vehicle.signalBus) annotation(Line(points = {{20,20},{-70,20},{-70,-70},{-60,-70}},color = {255,204,51}));
     connect(driverCommands.driverOutputs,driverOutputs) annotation(Line(points = {{41,20},{70,20},{70,40},{110,40}},color = {0,0,127}));
-    connect(vehicle.vehicleOutputs,vehicleOutputs) annotation(Line(points = {{42.5,-40},{76.25,-40},{76.25,-20},{110,-20}},color = {0,0,127}));
     connect(desiredVelocity.y,driverCommands.desired_velocity) annotation(Line(points = {{1,40},{26,40},{26,31.200000000000003}},color = {0,0,127}));
     connect(desiredVelocityPreview.y,driverCommands.desired_velocity_preview) annotation(Line(points = {{1,70},{29,70},{29,31.200000000000003}},color = {0,0,127}));
     connect(evaluation.frame_a,vehicle.vehicleFrame) annotation(Line(points = {{60,-20},{60,-24},{-68,-24},{-68,-55},{-60,-55}},color = {95,95,95}));
     connect(evaluation.vehicleOutputs,vehicle.vehicleOutputs) annotation(Line(points = {{49,-4},{45.75,-4},{45.75,-40},{42.5,-40}},color = {0,0,127}));
     connect(evaluation.driverOutputs,driverCommands.driverOutputs) annotation(Line(points = {{49,-14},{41,-14},{41,20}},color = {0,0,127}));
     connect(evaluation.evaluationOutputs,evaluationOutputs) annotation(Line(points = {{71,-10},{90.5,-10},{90.5,10},{110,10}},color = {0,0,127}));
+    connect(sensorPackage.vehicleOutputs,vehicleOutputs) annotation(Line(points = {{80,-48},{95,-48},{95,-20},{110,-20}},color = {0,0,127}));
+    connect(sensorPackage.signalBus,vehicle.signalBus) annotation(Line(points = {{60,-42},{48,-42},{48,-90},{-66,-90},{-66,-70},{-60,-70}},color = {255,204,51}));
+    connect(sensorPackage.controlBus,vehicle.controlBus) annotation(Line(points = {{60,-54},{54,-54},{54,-24},{0,-24},{0,-30}},color = {240,170,40},pattern = LinePattern.Dot));
+    connect(sensorPackage.frame_a,vehicle.vehicleFrame) annotation(Line(points = {{60,-48},{46,-48},{46,-24},{-66,-24},{-66,-55},{-60,-55}},color = {95,95,95}));
+    connect(sensorPackage.hub_1,vehicle.hub_1) annotation(Line(points = {{63,-58},{63,-86},{-45,-86},{-45,-80}},color = {95,95,95}));
+    connect(sensorPackage.hub_2,vehicle.hub_2) annotation(Line(points = {{67,-58},{67,-64},{11,-64},{11,-24},{-45,-24},{-45,-30}},color = {95,95,95}));
+    connect(sensorPackage.hub_3,vehicle.hub_3) annotation(Line(points = {{73,-58},{73,-86},{25,-86},{25,-80}},color = {95,95,95}));
+    connect(sensorPackage.hub_4,vehicle.hub_4) annotation(Line(points = {{77,-58},{77,-64},{51,-64},{51,-24},{25,-24},{25,-30}},color = {95,95,95}));
 end Sedan;
