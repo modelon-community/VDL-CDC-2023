@@ -19,10 +19,10 @@ model SensorPackage
     
     .Electrification.Machines.Control.Signals.tau_sns[4] tau_sns(id = {1,2,3,4}) annotation(Placement(transformation(extent = {{-46.0,-4.0},{-54.0,4.0}},origin = {0.0,0.0},rotation = 0.0)));
     .Electrification.Machines.Control.Signals.pwr_sns[4] pwr_sns(id = {1,2,3,4}) annotation(Placement(transformation(extent = {{-46.0,-14.0},{-54.0,-6.0}},origin = {0.0,0.0},rotation = 0.0)));
-    .CDC2023.Vehicles.Powertrains.i_sns[4] i_sns annotation(Placement(transformation(extent = {{-46.0,-24.0},{-54.0,-16.0}},origin = {0.0,0.0},rotation = 0.0)));
+    .CDC2023.Vehicles.Powertrains.Components.i_sns[4] i_sns annotation(Placement(transformation(extent = {{-46.0,-24.0},{-54.0,-16.0}},origin = {0.0,0.0},rotation = 0.0)));
     
     .VehicleDynamics.Vehicles.Chassis.Sensors.ChassisStates chassisStates annotation(Placement(transformation(extent = {{-20,30},{0,50}},origin = {0,0},rotation = 0)));
-    .CDC2023.Vehicles.Powertrains.v_pack v_pack annotation(Placement(transformation(extent = {{-4.0,4.0},{-12.0,12.0}},origin = {0.0,0.0},rotation = 0.0)));
+    .CDC2023.Vehicles.Powertrains.Components.v_pack v_pack annotation(Placement(transformation(extent = {{-4.0,4.0},{-12.0,12.0}},origin = {0.0,0.0},rotation = 0.0)));
     .CDC2023.Vehicles.Interfaces.DriverOutputs driverOutputs annotation(Placement(transformation(extent = {{-10.0,-10.0},{10.0,10.0}},origin = {0.0,110.0},rotation = -90.0)));
 protected
     .CDC2023.Vehicles.Interfaces.WheelOutputs[4] wheelOutputs annotation(Placement(transformation(extent = {{60.0,-34.0},{80.0,-14.0}},origin = {0.0,0.0},rotation = 0.0)));

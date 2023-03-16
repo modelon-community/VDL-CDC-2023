@@ -1,5 +1,6 @@
 within CDC2023.Vehicles.Sensors;
 model Evaluation
+    extends Modelon.Icons.Optimization;
     .CDC2023.Vehicles.Interfaces.VehicleOutputs vehicleOutputs annotation(Placement(transformation(extent = {{-120,50},{-100,70}},origin = {0,0},rotation = 0)));
     .CDC2023.Vehicles.Interfaces.DriverOutputs driverOutputs annotation(Placement(transformation(extent = {{-120.0,-50.0},{-100.0,-30.0}},origin = {0.0,0.0},rotation = 0.0)));
     .CDC2023.Vehicles.Interfaces.EvaluationOutputs evaluationOutputs annotation(Placement(transformation(extent = {{100,-10},{120,10}},origin = {0,0},rotation = 0)));
@@ -37,5 +38,4 @@ equation
     connect(pathInfo.r_P[2],square3.u2) annotation(Line(points = {{-19,-60},{-13.5,-60},{-13.5,-66},{-8,-66}},color = {0,0,127}));
     connect(square3.y,integrator3.u) annotation(Line(points = {{15,-60},{28,-60}},color = {0,0,127}));
     connect(sum.y,integrator.u) annotation(Line(points = {{11,40},{58,40}},color = {0,0,127}));
-    annotation(Icon(coordinateSystem(preserveAspectRatio = false,extent = {{-100.0,-100.0},{100.0,100.0}}),graphics = {Rectangle(lineColor={0,0,0},fillColor={230,230,230},fillPattern=FillPattern.Solid,extent={{-100.0,-100.0},{100.0,100.0}}),Text(lineColor={0,0,255},extent={{-150,150},{150,110}},textString="%name")}));
 end Evaluation;

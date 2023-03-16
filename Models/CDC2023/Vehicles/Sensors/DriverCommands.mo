@@ -1,5 +1,7 @@
 within CDC2023.Vehicles.Sensors;
 model DriverCommands
+    extends Modelon.Icons.Framed;
+    extends Modelon.Icons.Driver;
     .VehicleDynamics.Drivers.Tracking.Blocks.SinglePointLateralTracker lateralTracker annotation(Placement(transformation(extent = {{-12.0,28.0},{8.0,48.0}},origin={20,0},     rotation = 0.0)));
     .VehicleDynamics.Drivers.Tracking.Blocks.SinglePointLongitudinalTracker longitudinalTracker annotation(Placement(transformation(extent = {{-20.0,-40.0},{0.0,-20.0}},                   rotation = 0.0)));
     .VehicleDynamics.Drivers.Planning.DesiredVelocity planning(n_info = 1) annotation(Placement(transformation(extent = {{-54.0,0.0},{-34.0,20.0}},origin = {0.0,0.0},rotation = 0.0)));
@@ -101,5 +103,4 @@ equation
     connect(planning2.pathPoint[1],pathPointOut[3]) annotation(Line(points = {{-32,-20},{-28,-20},{-28,10},{0,10},{0,20},{24,20}},color = {255,0,0}));
     connect(pathPointOut[1].sG_x,driverOutputs.sG_x) annotation(Line(points = {{24,20},{36,20},{36,0},{110,0}},color = {255,0,0}));
     connect(pathPointOut[1].sG_y,driverOutputs.sG_y) annotation(Line(points = {{24,20},{36,20},{36,0},{110,0}},color = {255,0,0}));
-    annotation(Icon(coordinateSystem(preserveAspectRatio = false,extent = {{-100.0,-100.0},{100.0,100.0}}),graphics={  Rectangle(lineColor={0,0,0},fillColor={230,230,230},fillPattern=FillPattern.Solid,extent={{-100.0,-100.0},{100.0,100.0}}),Text(lineColor={0,0,255},extent={{-150,150},{150,110}},textString="%name")}));
 end DriverCommands;

@@ -1,4 +1,4 @@
-within CDC2023.Vehicles.Powertrains;
+within CDC2023.Vehicles.Powertrains.Components;
 
 model i_sns "Sensed machine current"
     extends .Electrification.Machines.Control.Signals.Templates.SignalReal(causality = .Electrification.Utilities.Types.Causality.Output,unit = "A");

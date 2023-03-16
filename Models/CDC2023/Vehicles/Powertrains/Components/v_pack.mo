@@ -1,4 +1,4 @@
-within CDC2023.Vehicles.Powertrains;
+within CDC2023.Vehicles.Powertrains.Components;
 
 model v_pack "Cell voltage (min/max/avg)"
   extends .Electrification.Batteries.Control.Signals.Templates.SignalReal(
