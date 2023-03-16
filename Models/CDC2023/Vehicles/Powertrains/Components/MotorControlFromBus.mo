@@ -1,4 +1,4 @@
-within CDC2023.Vehicles.Powertrains;
+within CDC2023.Vehicles.Powertrains.Components;
 
 model MotorControlFromBus "Simple proportional throttle torque controller"
   extends .VehicleDynamics.Vehicles.Powertrains.ControlUnits.Electric.Interfaces.Base(final number_of_motors = 4,final k_throttle = 0,enable_shift = false);
