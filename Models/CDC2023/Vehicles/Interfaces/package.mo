@@ -1,4 +1,4 @@
 within CDC2023.Vehicles;
-package Interfaces
-    extends Modelica.Icons.Package;
+package Interfaces "Output connectors"
+    extends Modelon.Icons.InterfacesPackage;
 end Interfaces;
