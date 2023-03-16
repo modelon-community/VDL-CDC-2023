@@ -18,7 +18,7 @@ model InWheelDrive
         r_shape=(r0H_1 + r0H_2 + r0H_3 + r0H_4)/4 + {-0.75,0,0},
         length=1.2,
         width=1.0,
-        height=0.1),redeclare replaceable .CDC2023.Vehicles.Powertrains.BatteryController controller),
+        height=0.1),redeclare replaceable .CDC2023.Vehicles.Powertrains.Components.BatteryController controller),
     redeclare replaceable .Electrification.Machines.Examples.Machine3D motor1(
       redeclare replaceable .Electrification.Machines.Core.Examples.Ideal core(
         controller_limits=true,
@@ -117,7 +117,7 @@ model InWheelDrive
       redeclare .Electrification.Machines.Mechanical.Gearbox mechanical(
         J_rotor=0,
         ratio=10,
-        d_viscous=0)),redeclare replaceable .CDC2023.Vehicles.Powertrains.MotorControlFromBus controller,enable_accelerator = false,enable_shift = false);
+        d_viscous=0)),redeclare replaceable .CDC2023.Vehicles.Powertrains.Components.MotorControlFromBus controller,enable_accelerator = false,enable_shift = false);
 
   .Modelica.Units.SI.Torque summary_tau_1=-hub_1.flange.tau
     "Powertrain torque on left front";
