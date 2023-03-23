@@ -10,7 +10,10 @@
       "steadyState" : { },
       "custom" : {
         "selectedCustomFunction" : "Chassis Acceleration ramp",
-        "parameters" : [ ]
+        "parameters" : [ {
+          "name" : "ax_min",
+          "value" : -5
+        } ]
       },
       "simulationType" : "custom"
     },
@@ -99,9 +102,6 @@
         "parameters" : [ {
           "name" : "direction",
           "value" : "f_x"
-        }, {
-          "name" : "n",
-          "value" : 50
         } ]
       },
       "simulationType" : "custom"
@@ -164,40 +164,6 @@
         } ]
       },
       "simulationType" : "custom"
-    },
-    "filters" : [ ],
-    "isDefault" : true
-  } ],
-  "CDC2023.Vehicles.Experiments.MaxAcceleration" : [ {
-    "created" : "2023-03-23T14:35:37.175Z",
-    "lastModified" : "2023-03-23T14:35:37.175Z",
-    "name" : "Experiment 1",
-    "expressions" : [ ],
-    "model" : "CDC2023.Vehicles.Experiments.MaxAcceleration",
-    "settings" : {
-      "dynamic" : {
-        "stopTime" : 10.0
-      },
-      "steadyState" : { },
-      "custom" : { },
-      "simulationType" : "dynamic"
-    },
-    "filters" : [ ],
-    "isDefault" : true
-  } ],
-  "CDC2023.Vehicles.Exports.Tests.Acceleration" : [ {
-    "created" : "2023-03-23T14:56:17.708Z",
-    "lastModified" : "2023-03-23T14:56:17.708Z",
-    "name" : "Experiment 1",
-    "expressions" : [ ],
-    "model" : "CDC2023.Vehicles.Exports.Tests.Acceleration",
-    "settings" : {
-      "dynamic" : {
-        "stopTime" : 20.0
-      },
-      "steadyState" : { },
-      "custom" : { },
-      "simulationType" : "dynamic"
     },
     "filters" : [ ],
     "isDefault" : true
