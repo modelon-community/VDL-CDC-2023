@@ -1,5 +1,5 @@
 within CDC2023.Vehicles.Sensors;
-model SensorPackage
+model SensorPackage "Sensor package to calculate vehicleOutputs"
     extends Modelon.Icons.MultipleSensors;
     .Modelica.Mechanics.MultiBody.Interfaces.Frame_a frame_a annotation(Placement(transformation(extent = {{-116,-16},{-84,16}},origin = {0,0},rotation = 0)));
     
@@ -108,5 +108,517 @@ equation
     connect(driverOutputs.rV_y,vehicleOutputs.v_t_y) annotation(Line(points = {{0,110},{0,55},{100,55},{100,0}},color = {0,0,127}));
     connect(driverOutputs.sG_x,vehicleOutputs.s_t_x) annotation(Line(points = {{0,110},{0,55},{100,55},{100,0}},color = {0,0,127}));
     connect(driverOutputs.sG_y,vehicleOutputs.s_t_y) annotation(Line(points = {{0,110},{0,55},{100,55},{100,0}},color = {0,0,127}));
-    annotation(Icon(coordinateSystem(preserveAspectRatio = false,extent = {{-100.0,-100.0},{100.0,100.0}}),graphics = {Text(lineColor={0,0,255},extent={{-150,150},{150,110}},textString="%name")}));
+    annotation(Icon(coordinateSystem(preserveAspectRatio = false,extent = {{-100.0,-100.0},{100.0,100.0}}),graphics = {Text(lineColor={0,0,255},extent={{-150,150},{150,110}},textString="%name")}),Documentation(info = "<html><p>This is sensor package to measure the following vehicle model outputs and write them to the&nbsp;<a href=\"modelica://CDC2023.Vehicles.Interfaces.VehicleOutputs\">VehicleOutputs</a>&nbsp;connector.</p><p><br></p><table style=\"width: 557px; height: 2552px;\">
+ 
+ <tbody><tr>
+  <td>
+  <p><span>Body
+  roll angle</span></p>
+  </td>
+  <td>
+  <p><span>phi_p
+  [rad]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  pitch angle</span></p>
+  </td>
+  <td>
+  <p><span>phi_q
+  [rad]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  yaw angle</span></p>
+  </td>
+  <td>
+  <p><span>phi_r
+  [rad]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  roll speed</span></p>
+  </td>
+  <td>
+  <p><span>omg_p
+  [rad/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  pitch speed</span></p>
+  </td>
+  <td>
+  <p><span>omg_q
+  [rad/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  yaw speed</span></p>
+  </td>
+  <td>
+  <p><span>omg_r
+  [rad/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  vertical acceleration</span></p>
+  </td>
+  <td>
+  <p><span>a_z
+  [m/s^2]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  lateral acceleration</span></p>
+  </td>
+  <td>
+  <p><span>a_y
+  [m/s^2]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  longitudinal acceleration</span></p>
+  </td>
+  <td>
+  <p><span>a_x
+  [m/s^2]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  vertical speed</span></p>
+  </td>
+  <td>
+  <p><span>v_z
+  [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  lateral speed</span></p>
+  </td>
+  <td>
+  <p><span>v_y
+  [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Body
+  longitudinal speed</span></p>
+  </td>
+  <td>
+  <p><span>v_x
+  [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Target
+  body lateral speed</span></p>
+  </td>
+  <td>
+  <p><span>v_t_y
+  [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Target
+  body longitudinal speed</span></p>
+  </td>
+  <td>
+  <p><span>v_t_x
+  [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Target
+  body lateral position</span></p>
+  </td>
+  <td>
+  <p><span>s_t_y
+  [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Target
+  body longitudinal position</span></p>
+  </td>
+  <td>
+  <p><span>s_t_x
+  [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FL
+  wheel rotational speed</span></p>
+  </td>
+  <td>
+  <p><span>omg_FL
+  [rad/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FR
+  wheel rotational speed</span></p>
+  </td>
+  <td>
+  <p><span>omg_FR
+  [rad/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RL
+  wheel rotational speed</span></p>
+  </td>
+  <td>
+  <p><span>omg_RL
+  [rad/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RR
+  wheel rotational speed</span></p>
+  </td>
+  <td>
+  <p><span>omg_RR
+  [rad/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FL
+  wheel slip ratio</span></p>
+  </td>
+  <td>
+  <p><span>sr_FL
+  [-]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FR
+  wheel slip ratio</span></p>
+  </td>
+  <td>
+  <p><span>sr_FR
+  [-]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RL
+  wheel slip ratio</span></p>
+  </td>
+  <td>
+  <p><span>sr_RL
+  [-]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RR
+  wheel slip ratio</span></p>
+  </td>
+  <td>
+  <p><span>sr_RR
+  [-]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FL
+  wheel motor current</span></p>
+  </td>
+  <td>
+  <p><span>i_FL
+  [A]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FR
+  wheel motor current</span></p>
+  </td>
+  <td>
+  <p><span>i_FR
+  [A]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RL
+  wheel motor current</span></p>
+  </td>
+  <td>
+  <p><span>i_RL
+  [A]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RR
+  wheel motor current</span></p>
+  </td>
+  <td>
+  <p><span>i_RR
+  [A]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FL
+  wheel motor torque</span></p>
+  </td>
+  <td>
+  <p><span>tau_FL
+  [Nm]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FR
+  wheel motor torque</span></p>
+  </td>
+  <td>
+  <p><span>tau_FR
+  [Nm]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RL
+  wheel motor torque</span></p>
+  </td>
+  <td>
+  <p><span>tau_RL
+  [Nm]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RR
+  wheel motor torque</span></p>
+  </td>
+  <td>
+  <p><span>tau_RR
+  [Nm]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FL
+  wheel motor power</span></p>
+  </td>
+  <td>
+  <p><span>pow_FL
+  [J/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FR
+  wheel motor power</span></p>
+  </td>
+  <td>
+  <p><span>pow_FR
+  [J/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RL
+  wheel motor power</span></p>
+  </td>
+  <td>
+  <p><span>pow_RL
+  [J/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RR
+  wheel motor power</span></p>
+  </td>
+  <td>
+  <p><span>pow_RR
+  [J/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>Battery
+  voltage</span></p>
+  </td>
+  <td>
+  <p><span>v_bat
+  [V]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FL
+  tyre steering angle</span></p>
+  </td>
+  <td>
+  <p><span>phi_str_FL
+  [rad]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FR
+  tyre steering angle</span></p>
+  </td>
+  <td>
+  <p><span>phi_str_FR
+  [rad]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FL
+  tyre vertical force</span></p>
+  </td>
+  <td>
+  <p><span>f_z_FL
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FR
+  tyre vertical force</span></p>
+  </td>
+  <td>
+  <p><span>f_z_FR
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RL
+  tyre vertical force</span></p>
+  </td>
+  <td>
+  <p><span>f_z_RL
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RR
+  tyre vertical force</span></p>
+  </td>
+  <td>
+  <p><span>f_z_RR
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FL
+  tyre lateral force</span></p>
+  </td>
+  <td>
+  <p><span>f_y_FL
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FR
+  tyre lateral force</span></p>
+  </td>
+  <td>
+  <p><span>f_y_FR
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RL
+  tyre lateral force</span></p>
+  </td>
+  <td>
+  <p><span>f_y_RL
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RR
+  tyre lateral force</span></p>
+  </td>
+  <td>
+  <p><span>f_y_RR
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FL
+  tyre longinudinal force</span></p>
+  </td>
+  <td>
+  <p><span>f_x_FL
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>FR
+  tyre longinudinal force</span></p>
+  </td>
+  <td>
+  <p><span>f_x_FR
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RL
+  tyre longinudinal force</span></p>
+  </td>
+  <td>
+  <p><span>f_x_RL
+  [N]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>RR
+  tyre longinudinal force</span></p>
+  </td>
+  <td>
+  <p><span>f_x_RR</span><span>
+  [N]</span></p>
+  </td>
+ </tr>
+</tbody></table><p><br></p><p><br></p></html>"));
 end SensorPackage;

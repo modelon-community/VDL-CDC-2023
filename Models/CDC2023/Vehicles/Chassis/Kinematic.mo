@@ -171,8 +171,7 @@ model Kinematic
     Documentation(info="<html>
 <p>The model is an instantiation of 
 <a href=\"modelica://VehicleDynamics.Vehicles.Chassis.Templates.Car#info\">Car</a> configured 
-with elasto-kinematic suspension (double wishbone front and rear) and Pacejka02 wheel 
-models. Parameters are set in each sub-component.
-</p>
+with kinematic suspension (double wishbone front and rear) and Pacejka02 wheel 
+models. Parameters are set in each sub-component.&nbsp;</p><p><span>The suspensions have been set up with high anti-dive and anti-squat to allow body attitude changes depending on how torque is distributed between the wheels.</span></p>
 </html>", revisions="<html>Copyright &copy; 2004-2022, MODELON AB <br /> The use of this software component is regulated by the licensing conditions for Modelon Libraries. <br />This copyright notice must, unaltered, accompany all components that are derived from, copied from, <br />or by other means have their origin from any Modelon Library.</html>"));
 end Kinematic;

@@ -1,5 +1,5 @@
 within CDC2023.Vehicles.Sensors;
-model Evaluation
+model Evaluation "Sensor to calculate outputs for external controllers"
     extends Modelon.Icons.Optimization;
     .CDC2023.Vehicles.Interfaces.VehicleOutputs vehicleOutputs annotation(Placement(transformation(extent = {{-120,50},{-100,70}},origin = {0,0},rotation = 0)));
     .CDC2023.Vehicles.Interfaces.DriverOutputs driverOutputs annotation(Placement(transformation(extent = {{-120.0,-50.0},{-100.0,-30.0}},origin = {0.0,0.0},rotation = 0.0)));
@@ -38,4 +38,8 @@ equation
     connect(pathInfo.r_P[2],square3.u2) annotation(Line(points = {{-19,-60},{-13.5,-60},{-13.5,-66},{-8,-66}},color = {0,0,127}));
     connect(square3.y,integrator3.u) annotation(Line(points = {{15,-60},{28,-60}},color = {0,0,127}));
     connect(sum.y,integrator.u) annotation(Line(points = {{11,40},{58,40}},color = {0,0,127}));
+    annotation(Documentation(info = "<html><p>This sensor calculates takes inputs from the VehicleOutputs and DriverOutputs connectors and calculates the following evaluation criteria:<br>
+ J_v_1: Integral of deviation from target velocity<br>
+ J_v_2: Integral of deviation from target path<br>
+ J_e: Integral of total energy consumed by the electric motors </p></html>"));
 end Evaluation;

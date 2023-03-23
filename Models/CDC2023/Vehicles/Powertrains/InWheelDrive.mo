@@ -1,6 +1,6 @@
 within CDC2023.Vehicles.Powertrains;
 
-model InWheelDrive
+model InWheelDrive "InWheelDrive powertrain with motor torque input from signalBus"
   extends .VehicleDynamics.Vehicles.Powertrains.Templates.Electric.Detailed.InWheelDrive(
     icon_name="modelica://VehicleDynamics/Resources/Images/Vehicles/Powertrains/ElectricInWheelDriveIcon.png",
     minimumGear=min(gear_map[:, 2]),
@@ -130,4 +130,5 @@ model InWheelDrive
             .Electrification.Control.Interfaces.SystemBus controlBus annotation(Placement(transformation(extent = {{-26.411266944791766,43.58873305520823},{-13.588733055208234,56.41126694479177}},origin = {0.0,0.0},rotation = 0.0)));
         equation
     connect(controller.controlBus,controlBus) annotation(Line(points = {{22,30},{-20,30},{-20,50}},color = {240,170,40},pattern = LinePattern.Dot));
+    annotation(Documentation(info = "<html><p>This is a model of an InWheelDrive powertrain with four motors directly driving the hubs&nbsp;based on the&nbsp;<a href=\"modelica://VehicleDynamics.Vehicles.Powertrains.Examples.Electric.Detailed.InWheelDrive\">InWheelDrive</a>&nbsp;VDL powertrain. The <a href=\"modelica://CDC2023.Vehicles.Powertrains.Components.MotorControlFromBus\">MotorControlFromBus</a>&nbsp;controller allows the motor torque signals to be written to the signalBus in a powertrain or vehicle experiment instead of using the driver inputs through the acceleratorPedalFlange.&nbsp;</p><p>The&nbsp;<a href=\"modelica://CDC2023.Vehicles.Powertrains.MinimalFourWheels\">MinimalFourWheels</a>&nbsp;experiment can be used to investigate the machine and battery characteristics.</p><p>The machines and battery parametrization is done in the individual components. More information about how the power and torque limits have been set can be found in&nbsp;<a href=\"modelica://VehicleDynamics.Vehicles.Powertrains.Examples.Electric.Detailed.Information\">Information</a>&nbsp;for detailed electric powertrains in VDL.</p></html>"));
 end InWheelDrive;
