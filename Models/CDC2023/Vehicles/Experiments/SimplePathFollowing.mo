@@ -25,4 +25,5 @@ equation
     connect(planning.pathPoint,lateralTracker.pathPoint) annotation(Line(points = {{31,26},{42,26}},color = {255,0,0}));
     connect(lateralTracker.percepts,perception.percepts) annotation(Line(points = {{42,18},{34,18},{34,10},{2,10},{2,26},{-3,26}},color = {0,128,255},pattern = LinePattern.Dash));
     connect(lateralTracker.str_cmd,steerRobot.phi_ref) annotation(Line(points = {{65,22},{71,22},{71,-6},{-70,-6},{-70,11.333333333333336},{-65,11.333333333333336}},color = {0,0,127}));
+    annotation(Documentation(info = "<html><p>This experiments demonstrates setting up a simple path following example with a closed loop steering control and open loop longitudinal control defined using the&nbsp;vectorized&nbsp;torqueSource blocks.</p><p>The steering control is based on the&nbsp;<a href=\"modelica://VehicleDynamics.Drivers.AutomaticI.ClosedLoopLateral\">ClosedLoopLateral</a>&nbsp;driver model with the option to set the previewTime and previewDistance inputs to the planning block using Modelica source blocks instead of using outputs from the lateralTracker block . </p></html>"));
 end SimplePathFollowing;

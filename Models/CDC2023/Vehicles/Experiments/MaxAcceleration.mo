@@ -13,4 +13,5 @@ equation
     connect(steerSource.y,steerRobot.phi_ref) annotation(Line(points = {{-103,11.333333333333336},{-65,11.333333333333336}},color = {0,0,127}));
     connect(release.y,steerRobot.release) annotation(Line(points = {{-73,31.333333333333336},{-54,31.333333333333336},{-54,22.333333333333336}},color = {255,0,255}));
     connect(vehicle.steeringWheelFlange,steerRobot.steeringWheelFlange) annotation(Line(points = {{-35,-30},{-35,11.333333333333336},{-44,11.333333333333336}},color = {95,95,95}));
+    annotation(Documentation(info = "<html><p>This experiments demonstrates an acceleration experiment by setting the steering angle input to 0 and defining the motor torques using a ramp source.<br></p></html>"));
 end MaxAcceleration;
