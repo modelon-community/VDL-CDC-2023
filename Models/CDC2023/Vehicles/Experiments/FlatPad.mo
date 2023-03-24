@@ -16,4 +16,5 @@ equation
           {-26,-25},{-20,-25}},
       color={95,95,95},
       pattern=LinePattern.Dot));
+    annotation(Documentation(info = "<html><p>This is a FlatPad experiment using the vehicle instead of the <a href=\"modelica://CDC2023.Vehicles.Chassis.Experiments.FlatPad\">Chassis</a>. </p><p>The total vehicle mass and inertia properties are calculated using the the&nbsp;<a href=\"modelica://Modelon.Mechanics.MultiBody.AggregateMass.AggregateMass\">AggregateMass</a>&nbsp;mass component (Note that these are resolved in the vehicleFrame). Some variables of interest are:&nbsp;</p><ul><li><span>aggregateMass.m – Total mass</span></li><li><span>aggregateMass.rr_r_CM[3] – C.g. location relative to resolve frame</span></li><li><span>aggregateMass.Ir_CM[3,3] – Inertia tensor</span></li></ul></html>"));
 end FlatPad;

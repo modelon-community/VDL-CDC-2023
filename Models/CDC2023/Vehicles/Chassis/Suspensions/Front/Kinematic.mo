@@ -92,4 +92,5 @@ model Kinematic "Kinematic DoubleWishbone"
     rightDamper(d=3500),
     stabilizerCompliance(c=3600));
     parameter Boolean visualize_joint_forces = false "True to visualize forces in joints" annotation(Dialog(tab = "Visualization"));
+    annotation(Documentation(info = "<html><p><span>The suspension is a composition of kinematic steerable double wishbone linkages equipped with linear dampers and linear springs with bump-stops. An ideal stabilizer linkage is used with linear spring-damper twist. The subframe is rigid.</span></p><p><span>The linkages are parametrized to generate high anti-dive and anti-lift forces when a torque is applied to the hubs using in wheel motors. This is done by inclining the lower wishbone chassis hardpoints in the side view.</span></p><p><span>The <a href=\"modelica://CDC2023.Vehicles.Chassis.Suspensions.Front.Experiments.TestSuspension\">TestSuspension</a>&nbsp;experiment can be used to investigate the kinematics and compliance characteristics of the suspension using steady state experiments.</span></p></html>"));
 end Kinematic;

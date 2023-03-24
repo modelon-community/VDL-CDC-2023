@@ -1,6 +1,6 @@
 within CDC2023.Vehicles.Interfaces;
 
-connector EvaluationOutputs "Vehicle Outputs"
+connector EvaluationOutputs "Evaluation Outputs"
     .Modelica.Blocks.Interfaces.RealOutput J_v_1 "Integral of deviation from target velocity";
     .Modelica.Blocks.Interfaces.RealOutput J_v_2 "Integral of deviation from target path";
     .Modelica.Blocks.Interfaces.RealOutput J_e "Energy consumption";

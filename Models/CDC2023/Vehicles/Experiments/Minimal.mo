@@ -12,4 +12,5 @@ equation
     connect(steerSource.y,steerRobot.phi_ref) annotation(Line(points = {{-103,11.333333333333336},{-65,11.333333333333336}},color = {0,0,127}));
     connect(release.y,steerRobot.release) annotation(Line(points = {{-73,31.333333333333336},{-54,31.333333333333336},{-54,22.333333333333336}},color = {255,0,255}));
     connect(vehicle.steeringWheelFlange,steerRobot.steeringWheelFlange) annotation(Line(points = {{-35,-30},{-35,11.333333333333336},{-44,11.333333333333336}},color = {95,95,95}));
+    annotation(Documentation(info = "<html><p>This experiments demonstrates setting up a manoeuvre using the steering angle and motor torque inputs.</p><p>The steerSource block provides the steering input to steerRobot.phi_ref</p><p>The vecorized&nbsp;torqueSource block write the VDL_trm_mtr_trq_cmd to the signalBus for each motor providing torque commands.</p></html>"));
 end Minimal;

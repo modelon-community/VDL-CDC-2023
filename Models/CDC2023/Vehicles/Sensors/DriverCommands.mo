@@ -103,4 +103,145 @@ equation
     connect(planning2.pathPoint[1],pathPointOut[3]) annotation(Line(points = {{-32,-20},{-28,-20},{-28,10},{0,10},{0,20},{24,20}},color = {255,0,0}));
     connect(pathPointOut[1].sG_x,driverOutputs.sG_x) annotation(Line(points = {{24,20},{36,20},{36,0},{110,0}},color = {255,0,0}));
     connect(pathPointOut[1].sG_y,driverOutputs.sG_y) annotation(Line(points = {{24,20},{36,20},{36,0},{110,0}},color = {255,0,0}));
+    annotation(Documentation(info = "<html><p>This component contains the driver model and sensors to write the following signals to the&nbsp;<a href=\"modelica://CDC2023.Vehicles.Interfaces.DriverOutputs\">DriverOutputs</a>&nbsp;connector:</p><p><br></p><table>
+ 
+ 
+ <tbody><tr>
+  <td>
+  <p><span>CloseLoopDriver</span><span>
+  steering command</span></p>
+  </td>
+  <td>
+  <p><span>str_cmd</span><span>
+  [rad]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver</span><span>
+  brake command</span></p>
+  </td>
+  <td>
+  <p><span>brk_cmd</span><span>
+  [-]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver&nbsp;</span><span>accel</span><span>
+  command</span></p>
+  </td>
+  <td>
+  <p><span>acc_cmd</span><span>
+  [-]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver&nbsp;</span><span>pathPoint</span><span>
+  reference velocity along path at t[k] and t[k-1]</span></p>
+  </td>
+  <td>
+  <p><span>vV_P_x</span><span>[2]
+  [m/2]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver&nbsp;</span><span>pathPoint</span><span>
+  x position</span></p>
+  </td>
+  <td>
+  <p><span>rV_x</span><span>
+  [m]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver&nbsp;</span><span>pathPoint</span><span>
+  y position</span></p>
+  </td>
+  <td>
+  <p><span>rV_y</span><span>
+  [m]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver</span><span>
+  preview</span><span> distance</span></p>
+  </td>
+  <td>
+  <p><span>previewDistance</span><span>[2]
+  [m]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver</span><span>
+  preview</span><span> time</span></p>
+  </td>
+  <td>
+  <p><span>previewTime</span><span>[2]
+  [s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>LateralTracker</span><span>
+  preview</span><span> distance</span></p>
+  </td>
+  <td>
+  <p><span>previewDistance_y</span><span>
+  [m]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>LateralTracker</span><span>
+  preview</span><span> time</span></p>
+  </td>
+  <td>
+  <p><span>previewTime_y</span><span>
+  [s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver</span><span>
+  percepts: vehicle speed</span></p>
+  </td>
+  <td>
+  <p><span>v_veh_percepts</span><span>
+  [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver</span><span>
+  percepts: vehicle speed in x</span></p>
+  </td>
+  <td>
+  <p><span>vV_x_precepts</span><span> [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver</span><span>
+  percepts: vehicle speed in y</span></p>
+  </td>
+  <td>
+  <p><span>vV_y_precepts</span><span> [m/s]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><span>CloseLoopDriver</span><span>
+  percepts: velocity along path in x</span></p>
+  </td>
+  <td>
+  <p><span>vV_P_x_precepts</span><span> [m/s]</span></p>
+  </td>
+ </tr>
+</tbody></table><p><p><br></p></p><p><br></p></html>"));
 end DriverCommands;
